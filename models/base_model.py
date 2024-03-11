@@ -34,6 +34,17 @@ class BaseModel:
             self.updated_at = datetime.now()
             storage.new(self)
 
+    def to_dict(self):
+        """This function returns a dict with all the keys/values of
+        __dict__
+        """
+
+        this_dict = self.__dict__.copy()
+        this_dict["__class__"] = type(self).__name__
+        this_dict["created_at"] = this_dict["created_at"].isoformat()
+        this_dict["updated_at"] = this_dict["updated_at"].isoformat()
+        return this_dict
+
     def __str__(self):
         """This function returns the official string representation"""
 
@@ -47,14 +58,3 @@ class BaseModel:
 
         self.updated_at = datetime.now()
         storage.save()
-
-    def to_dict(self):
-        """This function returns a dict with all the keys/values of
-        __dict__
-        """
-
-        this_dict = self.__dict__.copy()
-        this_dict["__class__"] = type(self).__name__
-        this_dict["created_at"] = this_dict["created_at"].isoformat()
-        this_dict["updated_at"] = this_dict["updated_at"].isoformat()
-        return this_dict
