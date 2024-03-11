@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 """Base model: This is the base file for the project"""
 
-import uuid
+import uuid, models
 from datetime import datetime
-from models import storage
 
 
 class BaseModel:
