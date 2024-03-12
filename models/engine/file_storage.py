@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """FileStorage"""
+
 import datetime, json, os
 
 class FileStorage:
@@ -14,8 +15,8 @@ class FileStorage:
 
     def new(self, object):
         """Creates new object"""
-        k = "{}.{}".format(type(object).__name__, object.id)
-        FileStorage.__objects[k] = object
+        key = "{}.{}".format(type(object).__name__, object.id)
+        FileStorage.__objects[key] = object
 
     def save(self):
         """Serializes the __objects dict to a JSON file (path: __file_path)"""
@@ -54,7 +55,7 @@ class FileStorage:
 
     def attributes(self):
         """Returns attributes"""
-        attr = {
+        attributes = {
             "BaseModel":
                      {"id": str,
                       "created_at": datetime.datetime,
@@ -88,4 +89,4 @@ class FileStorage:
                          "user_id": str,
                          "text": str}
         }
-        return attr
+        return attributes
