@@ -55,15 +55,15 @@ class TestBaseModel(unittest.TestCase):
 
         attr = storage.attributes()["BaseModel"]
         base_class = BaseModel()
-        for k, v in attr.items():
-            self.assertTrue(hasattr(base_class, k))
-            self.assertEqual(type(getattr(base_class, k, None)), v)
+        for key, value in attr.items():
+            self.assertTrue(hasattr(base_class, key))
+            self.assertEqual(type(getattr(base_class, key, None)), value)
 
     def test_time_created(self):
         """Testing updated_at & createf_at during creation"""
         today = datetime.now()
         base = BaseModel()
-        td = base.updated_at - b.created_at
+        td = base.updated_at - base.created_at
         self.assertTrue(abs(td.total_seconds()) < 0.01)
         td = base.created_at - date_now
         self.assertTrue(abs(td.total_seconds()) < 0.1)
@@ -71,7 +71,7 @@ class TestBaseModel(unittest.TestCase):
     def test_id(self):
         """Testing the uuid"""
 
-        bs = [BaseModel().id for k in range(1000)]
+        bs = [BaseModel().id for key in range(1000)]
         self.assertEqual(len(set(bs)), len(bs))
 
     def test_save(self):
@@ -104,7 +104,7 @@ class TestBaseModel(unittest.TestCase):
         """Testing the method to_dict()"""
 
         base = BaseModel()
-        base.name = "Laura"
+        base.name = "kc_clintone"
         base.age = 23
         x = base.to_dict()
         self.assertEqual(x["id"], base.id)
@@ -158,8 +158,8 @@ class TestBaseModel(unittest.TestCase):
         self.resetStorage()
         base = BaseModel()
         base.save()
-        k = "{}.{}".format(type(base).__name__, base.id)
-        x = {k: base.to_dict()}
+        key = "{}.{}".format(type(base).__name__, base.id)
+        x = {key: base.to_dict()}
         self.assertTrue(os.path.isfile(FileStorage._FileStorage__file_path))
         with open(FileStorage._FileStorage__file_path,
                   "r", encoding="utf-8") as f:
