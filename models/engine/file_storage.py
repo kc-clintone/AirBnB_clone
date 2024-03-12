@@ -54,7 +54,7 @@ class FileStorage:
 
     def attributes(self):
         """Returns attributes"""
-        attributes = {
+        attr = {
             "BaseModel":
                      {"id": str,
                       "created_at": datetime.datetime,
@@ -88,4 +88,4 @@ class FileStorage:
                          "user_id": str,
                          "text": str}
         }
-        return attributes
+        return attr
