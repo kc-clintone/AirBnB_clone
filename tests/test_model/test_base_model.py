@@ -17,14 +17,14 @@ class TestBaseModel(unittest.TestCase):
         self.assertNotEqual(changes, save_changes)
 
     def init(self):
-    """testing initializing method"""
+        """testing initializing method"""
         test_model = BaseModel()
         self.assertIsNotNone(test_model.id)
         self.assertIsNotNone(test_model.created_at)
         self.assertIsNotNone(test_model.updated_at)
 
     def to_dict(self):
-    """testing dictionary method"""
+        """testing dictionary method"""
         test_model = BaseModel()
         test_dict = test_model.to_dict()
         self.assertIsInstance(test_dict, dict)
@@ -35,7 +35,7 @@ class TestBaseModel(unittest.TestCase):
         self.assertEqual(test_dict["updated_at"], test_model.updated_at.isoformat())
 
     def test_str(self):
-    """testing the string method"""
+        """testing the string method"""
         new_model = BaseModel()
         self.assertTrue(str(new_model).startswith('[BaseModel]'))
         self.assertIn(new_model.id, str(new_model))
