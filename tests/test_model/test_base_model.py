@@ -9,21 +9,21 @@ import unittest
 class TestBaseModel(unittest.TestCase):
     """Test cases for the base model"""
 
-    def save(self):
+    def test_save(self):
         """testing the save method"""
         new_model = BaseModel()
         changes = new_model.updated_at
         save_changes = new_model.save()
         self.assertNotEqual(changes, save_changes)
 
-    def init(self):
+    def test_initialization(self):
         """testing initializing method"""
         test_model = BaseModel()
         self.assertIsNotNone(test_model.id)
         self.assertIsNotNone(test_model.created_at)
         self.assertIsNotNone(test_model.updated_at)
 
-    def to_dict(self):
+    def test_to_dict(self):
         """testing dictionary method"""
         test_model = BaseModel()
         test_dict = test_model.to_dict()
