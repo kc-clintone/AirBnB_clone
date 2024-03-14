@@ -22,6 +22,11 @@ class BaseModel:
                 if x == "created_at":
                     self.__dict__["created_at"] = datetime.strptime(
                         kwargs["created_at"], std_format)
+                elif x == "updated_at":
+                    self.__dict__["updated_at"] = datetime.strptime(
+                        kwargs["updated_at"], std_format)
+                else:
+                    self.__dict__[x] = kwargs[x]
 
         self.id = str(uuid.uuid4())
         self.created_at = datetime.utcnow()
