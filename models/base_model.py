@@ -8,13 +8,16 @@ import uuid
 class BaseModel:
     """This is going to be the base class that all others will inherit"""
     def __init__(self, *args, **kwargs ):
-        
         """
         Args:
             - *args: positional args
             - **kwargs: keyword args
         Initializes the objects.
         """
+
+        std_format = "%Y-%m-%dT%H:%M:%S.%f"
+
+        
         self.id = str(uuid.uuid4())
         self.created_at = datetime.utcnow()
         self.updated_at = datetime.utcnow()
