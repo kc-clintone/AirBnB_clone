@@ -34,3 +34,12 @@ class TestBaseModel(unittest.TestCase):
         self.assertEqual(test_dict["created_at"], test_model.created_at.isoformat())
         self.assertEqual(test_dict["updated_at"], test_model.updated_at.isoformat())
 
+    def test_str(self):
+    """testing the string method"""
+        new_model = BaseModel()
+        self.assertTrue(str(new_model).startswith('[BaseModel]'))
+        self.assertIn(new_model.id, str(new_model))
+        self.assertIn(str(new_model.__dict__), str(new_model))
+
+if __name__ == "__main__":
+    unittest.main()
