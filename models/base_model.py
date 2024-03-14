@@ -49,5 +49,5 @@ if __name__ == "__main__":
     test_model_json_format = test_model.to_dict()
     print(test_model_json_format)
     print("____json version of test_model____\n")
-    for i in test_model_json.keys():
-        print("\t{}: ({}) - ()".format(i, type(test_model_json[i]), test_model_json[i]))
+    for i in test_model_json_format.keys():
+        print("\t{}: ({}) - ()".format(i, type(test_model_json_format[i]), test_model_json[i]))
