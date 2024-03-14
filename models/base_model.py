@@ -39,7 +39,7 @@ class BaseModel:
         new_dict["updated_at"] = self.updated_at.isoformat()
         return new_dict
 
-if __name == "__main__":
+if __name__ == "__main__":
     test_model = BaseModel()
     test_model.name = "test model"
     test_model.test_number = 89
