@@ -7,8 +7,12 @@ import uuid
 
 class BaseModel:
     """This is going to be the base class that all others will inherit"""
-    def __init__(self):
+    def __init__(self, *args, **kwargs ):
+        
         """
+        Args:
+            - *args: positional args
+            - **kwargs: keyword args
         Initializes the objects.
         """
         self.id = str(uuid.uuid4())
