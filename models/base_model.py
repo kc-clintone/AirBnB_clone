@@ -17,7 +17,12 @@ class BaseModel:
 
         std_format = "%Y-%m-%dT%H:%M:%S.%f"
 
-        
+        if kwargs is not None and kwargs != {}:
+            for x in kwargs:
+                if x == "created_at":
+                    self.__dict__["created_at"] = datetime.strptime(
+                        kwargs["created_at"], std_format)
+
         self.id = str(uuid.uuid4())
         self.created_at = datetime.utcnow()
         self.updated_at = datetime.utcnow()
