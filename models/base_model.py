@@ -26,7 +26,7 @@ class BaseModel:
          returns str representation
         """
         c_name = self.__class__.__name__
-        return "[{}] ({}) ()".format(c_name, self.id, self.__dict__)
+        return "[{}] ({}) {}".format(c_name, self.id, self.__dict__)
 
     def to_dict(self):
         """
