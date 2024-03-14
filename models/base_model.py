@@ -5,7 +5,6 @@ from datetime import datetime
 import uuid
 
 
-
 class BaseModel:
     """This is going to be the base class that all others will inherit"""
     def __init__(self):
@@ -48,6 +47,6 @@ if __name__ == "__main__":
     print(test_model)
     test_model_json_format = test_model.to_dict()
     print(test_model_json_format)
-    print("____json version of test_model____\n")
+    print("____json version of test_model____")
     for i in test_model_json_format.keys():
-        print("\t{}: ({}) - ()".format(i, type(test_model_json_format[i]), test_model_json_format[i]))
+        print("\t{}: ({}) - {}".format(i, type(test_model_json_format[i]), test_model_json_format[i]))
