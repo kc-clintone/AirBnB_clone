@@ -80,7 +80,7 @@ class TestAmenity_instantiation(unittest.TestCase):
         self.assertIn("'updated_at': " + test_date_repr, test_str)
 
     def test_for_unused_args(self):
-        trst_amenity = Amenity(None)
+        test_amenity = Amenity(None)
         self.assertNotIn(None, test_amenity.__dict__.values())
 
     def test_object_instantiation_with_kwargs(self):
