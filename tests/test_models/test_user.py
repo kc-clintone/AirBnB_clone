@@ -152,9 +152,9 @@ class TestUser_to_dict(unittest.TestCase):
 
     def test_if_to_dict_has_extra_attr(self):
         usr = User()
-        usr.last_name = "Holberton"
-        us.identification = 98
-        self.assertEqual("Holberton", usr.last_name)
+        usr.last_name = "kaysee"
+        usr.identification = 20
+        self.assertEqual("kaysee", usr.last_name)
         self.assertIn("identification", usr.to_dict())
 
     def test_if_to_dict_datetime_attrs_are_strings(self):
