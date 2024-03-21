@@ -39,7 +39,7 @@ class TestState_instantiation(unittest.TestCase):
         test_state_2 = State()
         self.assertLess(test_state_1.created_at, test_state_2.created_at)
 
-   def test_if_name_is_a_public_class_attr(self):
+    def test_if_name_is_a_public_class_attr(self):
         x = State()
         self.assertEqual(str, type(State.name))
         self.assertIn("name", dir(x))
