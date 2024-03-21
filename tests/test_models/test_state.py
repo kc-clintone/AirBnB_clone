@@ -116,7 +116,7 @@ class TestState_save(unittest.TestCase):
         self.assertLess(initial_update, subsequent_update)
         sleep(0.05)
         x.save()
-        self.assertLess(subsequent_update, test_usr.updated_at)
+        self.assertLess(subsequent_update, x.updated_at)
 
     def test_save_with_args(self):
         x = State()
