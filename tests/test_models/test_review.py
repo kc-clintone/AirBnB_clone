@@ -163,7 +163,7 @@ class TestReview_to_dict(unittest.TestCase):
     def test_if_to_dict_has_extra_attr(self):
         x = Review()
         x.middle_name = "kaysee"
-        review.test_number = 734
+        x.test_number = 734
         self.assertEqual("kaysee", x.middle_name)
         self.assertIn("test_number", x.to_dict())
 
