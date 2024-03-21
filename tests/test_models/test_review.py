@@ -172,7 +172,7 @@ class TestReview_to_dict(unittest.TestCase):
         test_dict = x.to_dict()
         self.assertEqual(str, type(test_dict["id"]))
         self.assertEqual(str, type(test_dict["created_at"]))
-        self.assertEqual(str, type(test__dict["updated_at"]))
+        self.assertEqual(str, type(test_dict["updated_at"]))
 
     def test_the_to_dict_output(self):
         x = datetime.today()
