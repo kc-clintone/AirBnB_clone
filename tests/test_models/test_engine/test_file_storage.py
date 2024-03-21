@@ -105,14 +105,14 @@ class TestFileStorage_methods(unittest.TestCase):
             models.storage.save(None)
 
     def test_save(self):
-        test_base_model = BaseModel()
+        test_model = BaseModel()
         test_user = User()
         test_state = State()
         test_place = Place()
         test_city = City()
         test_amenity = Amenity()
         test_review = Review()
-        models.storage.new(test_base_model)
+        models.storage.new(test_model)
         models.storage.new(test_user)
         models.storage.new(test_state)
         models.storage.new(test_place)
@@ -120,16 +120,16 @@ class TestFileStorage_methods(unittest.TestCase):
         models.storage.new(test_amenity)
         models.storage.new(test_review)
         models.storage.save()
-        bfr = ""
+        buffer = ""
         with open("file.json", "r") as f:
-            bfr = f.read()
-            self.assertIn("BaseModel." + test_base_model.id, bfr)
-            self.assertIn("User." + test_user.id, bfr)
-            self.assertIn("State." + test_state.id, bfr)
-            self.assertIn("Place." + test_place.id, bfr)
-            self.assertIn("City." + test_city.id, bfr)
-            self.assertIn("Amenity." + test_amenity.id, bfr)
-            self.assertIn("Review." + test_review.id, bfr)
+            buffer = f.read()
+            self.assertIn("BaseModel." + test_model.id, buffer)
+            self.assertIn("User." + test_user.id, buffer)
+            self.assertIn("State." + test_state.id, buffer)
+            self.assertIn("Place." + test_place.id, buffer)
+            self.assertIn("City." + test_city.id, buffer)
+            self.assertIn("Amenity." + test_amenity.id, buffer)
+            self.assertIn("Review." + test_review.id, buffer)
 
     def test_reload_with_arg(self):
         with self.assertRaises(TypeError):
