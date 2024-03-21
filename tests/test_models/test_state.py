@@ -39,6 +39,12 @@ class TestState_instantiation(unittest.TestCase):
         test_state_2 = State()
         self.assertLess(test_state_1.created_at, test_state_2.created_at)
 
+   def test_if_name_is_a_public_class_attr(self):
+        x = State()
+        self.assertEqual(str, type(State.name))
+        self.assertIn("name", dir(x))
+        self.assertNotIn("name", x.__dict__)
+
     def test_if_two_state_have_different_updated_at(self):
         test_state_1 = State()
         sleep(0.05)
@@ -141,7 +147,7 @@ class TestState_to_dict(unittest.TestCase):
     def test_if_to_dict_has_extra_attr(self):
         x = State()
         x.last_name = "Nairobi"
-        x.identification = 98
+        x.identification = 989
         self.assertEqual("Nairobi", x.last_name)
         self.assertIn("identification", x.to_dict())
 
