@@ -34,7 +34,7 @@ class TestState_instantiation(unittest.TestCase):
         self.assertNotEqual(test_state_1.id, test_state_2.id)
 
     def test_if_two_state_have_different_created_at(self):
-        test_Slstate_1 = State()
+        test_state_1 = State()
         sleep(0.05)
         test_state_2 = State()
         self.assertLess(test_state_1.created_at, test_state_2.created_at)
