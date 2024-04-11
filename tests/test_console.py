@@ -28,7 +28,7 @@ class TestHBNBhelp(unittest.TestCase):
     Unit testing for the help command
     """
     def test_quit(self):
-        x = "quit: exits the program."
+        x = "quit: exits the program"
         with patch("sys.stdout", new=StringIO()) as output:
             self.assertFalse(HBNBCommand().onecmd("help quit"))
             self.assertEqual(x, output.getvalue().strip())
