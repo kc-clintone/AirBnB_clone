@@ -371,7 +371,7 @@ class TestHBNBall(unittest.TestCase):
             pass
 
     def test_all_with_invalid_class(self):
-        x = "** class name missing**"
+        x = "** class name missing **"
         with patch("sys.stdout", new=StringIO()) as output:
             self.assertFalse(HBNBCommand().onecmd("all MyModel"))
             self.assertEqual(x, output.getvalue().strip())
