@@ -85,23 +85,23 @@ class TestHBNBcreate(unittest.TestCase):
             pass
 
     def test_creating_a_nameless_class(self):
-        x = "** class name missing **"
+        x = "** class doesn't exist **"
         with patch("sys.stdout", new=StringIO()) as output:
             self.assertFalse(HBNBCommand().onecmd("create"))
             self.assertEqual(x, output.getvalue().strip())
 
     def test_creating_a_class_with_invalid_name(self):
-        x = "** class name missing **"
+        x = "** class diesn't exist **"
         with patch("sys.stdout", new=StringIO()) as output:
             self.assertFalse(HBNBCommand().onecmd("create MyModel"))
             self.assertEqual(x, output.getvalue().strip())
 
     def test_if_create_returns_invalid_syntax(self):
-        x = "** Unknown syntax: MyModel.create()"
+        x = "*** Unknown syntax: MyModel.create()"
         with patch("sys.stdout", new=StringIO()) as output:
             self.assertFalse(HBNBCommand().onecmd("MyModel.create()"))
             self.assertEqual(x, output.getvalue().strip())
-        x = "** Unknown syntax: BaseModel.create()"
+        x = "*** Unknown syntax: BaseModel.create()"
         with patch("sys.stdout", new=StringIO()) as output:
             self.assertFalse(HBNBCommand().onecmd("BaseModel.create()"))
             self.assertEqual(x, output.getvalue().strip())
@@ -168,7 +168,7 @@ class TestHBNBshow(unittest.TestCase):
             pass
 
     def test_show_command_with_missing_class_name(self):
-        x = "** class name missing **"
+        x = "** class doesn't exist **"
         with patch("sys.stdout", new=StringIO()) as output:
             self.assertFalse(HBNBCommand().onecmd("show"))
             self.assertEqual(x, output.getvalue().strip())
@@ -177,7 +177,7 @@ class TestHBNBshow(unittest.TestCase):
             self.assertEqual(x, output.getvalue().strip())
 
     def test_show_command_with_invalid_class(self):
-        x = "** class name missing **"
+        x = "** class doesn't exist **"
         with patch("sys.stdout", new=StringIO()) as output:
             self.assertFalse(HBNBCommand().onecmd("show MyModel"))
             self.assertEqual(x, output.getvalue().strip())
@@ -186,7 +186,7 @@ class TestHBNBshow(unittest.TestCase):
             self.assertEqual(x, output.getvalue().strip())
 
     def test_show_command_with_missing_id_space_notation(self):
-        x = "** instance id missing **"
+        x = "** no instance found **"
         with patch("sys.stdout", new=StringIO()) as output:
             self.assertFalse(HBNBCommand().onecmd("show BaseModel"))
             self.assertEqual(x, output.getvalue().strip())
