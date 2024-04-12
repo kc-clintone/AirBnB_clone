@@ -34,7 +34,7 @@ class TestHBNBhelp(unittest.TestCase):
             self.assertEqual(x, output.getvalue().strip())
 
     def test_EOF(self):
-        x = "This is the Ctrl+D signal, used to exit the program."
+        x = "EOF or CTRL+D: exits the program"
         with patch("sys.stdout", new=StringIO()) as output:
             self.assertFalse(HBNBCommand().onecmd("help EOF"))
             self.assertEqual(x, output.getvalue().strip())
