@@ -56,12 +56,10 @@ article h2 {
   background-position: 50% 5px;
   background-repeat: no-repeat;
 }
-.user,
-.description {
+.user {
   text-align: left;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin: 10px 0;
 }
 .user span {
-  font-weight: 800;
+  font-weight: 900;
 }
