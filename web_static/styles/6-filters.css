@@ -45,9 +45,9 @@ section.filters button:hover {
 .amenities h4 {
     font-weight: 400;
     font-size: 14px;
-    margin: 0, 0, 0, 30px;
-    /*margin-bottom: 0px;
-    margin-left: 30px;*/
+    margin-top: 0;
+    margin-bottom: 0px;
+    margin-left: 30px;
     text-align: left;
 }
 .popover {
