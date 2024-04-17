@@ -484,7 +484,7 @@ class TestHBNBupdate(unittest.TestCase):
             self.assertEqual(x, output.getvalue().strip())
 
     def test_update_with_missing_id_dot_notation(self):
-        x = "** no instance found **"
+        x = "** instance id missing **"
         with patch("sys.stdout", new=StringIO()) as output:
             self.assertFalse(HBNBCommand().onecmd("BaseModel.update()"))
             self.assertEqual(x, output.getvalue().strip())
