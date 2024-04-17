@@ -30,7 +30,7 @@ article h2 {
   font-size: 30px;
   position: relative;
   float: right;
-  top: -80px; 
+  top: -70px; 
 }
 .max_guest {
   background-image: url("../images/icon_group.png");
@@ -56,8 +56,8 @@ article h2 {
   display: inline-block;
   width: 100px;
   height: 80%;
-  /*line-height: 140px;*/
-  background-position: 50% 5px;
+  line-height: 120px;
+  background-position: 50%;
   background-repeat: no-repeat;
 }
 .user {
