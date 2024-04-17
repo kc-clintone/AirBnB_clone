@@ -63,9 +63,9 @@ section.filters button:hover {
 }
 li {
     list-style-type: none;
-    margin: 10px, 0, 10px, 0;
-    /*margin-top:10px;
-    margin-bottom: 10px;*/
+    /*margin: 10px, 0, 10px, 0;*/
+    margin-top:10px;
+    margin-bottom: 10px;
 }
 .locations:hover .popover,
 .amenities:hover .popover {
