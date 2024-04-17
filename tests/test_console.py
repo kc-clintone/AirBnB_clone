@@ -168,7 +168,7 @@ class TestHBNBshow(unittest.TestCase):
             pass
 
     def test_show_command_with_missing_class_name(self):
-        x = "** class doesn't exist **"
+        x = "** class name missing**"
         with patch("sys.stdout", new=StringIO()) as output:
             self.assertFalse(HBNBCommand().onecmd("show"))
             self.assertEqual(x, output.getvalue().strip())
