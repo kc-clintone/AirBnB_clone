@@ -91,7 +91,7 @@ class TestHBNBcreate(unittest.TestCase):
             self.assertEqual(x, output.getvalue().strip())
 
     def test_creating_a_class_with_invalid_name(self):
-        x = "** class diesn't exist **"
+        x = "** class doesn't exist **"
         with patch("sys.stdout", new=StringIO()) as output:
             self.assertFalse(HBNBCommand().onecmd("create MyModel"))
             self.assertEqual(x, output.getvalue().strip())
@@ -301,7 +301,7 @@ class TestHBNBdestroy(unittest.TestCase):
             self.assertEqual(x, output.getvalue().strip())
 
     def test_destroy_with_id_missing_space_notation(self):
-        x = "** no instance found **"
+        x = "** instance id missing **"
         with patch("sys.stdout", new=StringIO()) as output:
             self.assertFalse(HBNBCommand().onecmd("destroy BaseModel"))
             self.assertEqual(x, output.getvalue().strip())
@@ -325,7 +325,7 @@ class TestHBNBdestroy(unittest.TestCase):
             self.assertEqual(x, output.getvalue().strip())
 
     def test_destroy_with_id_missing_dot_notation(self):
-        x = "** no instance found **"
+        x = "** instance id missing **"
         with patch("sys.stdout", new=StringIO()) as output:
             self.assertFalse(HBNBCommand().onecmd("BaseModel.destroy()"))
             self.assertEqual(x, output.getvalue().strip())
