@@ -55,6 +55,7 @@ class BaseModel:
         new_dict["updated_at"] = self.updated_at.isoformat()
         return new_dict
 
+
 if __name__ == "__main__":
     test_model = BaseModel()
     test_model.name = "test model"
@@ -66,4 +67,5 @@ if __name__ == "__main__":
     print(test_model_json_format)
     print("____json version of test_model____")
     for i in test_model_json_format.keys():
-        print("\t{}: ({}) - {}".format(i, type(test_model_json_format[i]), test_model_json_format[i]))
+        print("\t{}: ({}) - {}".format(i, type(test_model_json_format[i]),
+              test_model_json_format[i]))
