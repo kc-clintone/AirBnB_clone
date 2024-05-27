@@ -223,10 +223,10 @@ class HBNBCommand(cmd.Cmd):
         default: the default behaviour for the hbnb cmd
         """
         arguments_list = arg.split('.')
-        k = arguments_list[0]
+        km = arguments_list[0]
         cmds = arguments_list[1].split('(')
         new_method = cmds[0]
-        l = cmds[1].split(')')[0]
+        lm = cmds[1].split(')')[0]
         fn_dict = {
                 'all': self.do_all,
                 'update': self.do_update,
@@ -237,9 +237,9 @@ class HBNBCommand(cmd.Cmd):
 
         if new_method in fn_dict.keys():
             if new_method != "update":
-                return fn_dict[new_method]("{} {}".format(k, l))
+                return fn_dict[new_method]("{} {}".format(km, lm))
             else:
-                if not k:
+                if not km:
                     print("** class name missing **")
                     return
                 try:
@@ -248,7 +248,7 @@ class HBNBCommand(cmd.Cmd):
                     pass
                 try:
                     run = fn_dict[new_method]
-                    return run("{} {} {}".format(k, x, y))
+                    return run("{} {} {}".format(km, x, y))
                 except Exception:
                     pass
         else:
