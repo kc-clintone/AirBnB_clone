@@ -33,10 +33,10 @@ class BaseModel:
             self.updated_at = datetime.utcnow()
 
     def save(self):
-       """
-       save to local storage
-       """
-       self.updated_at = datetime.utcnow()
+        """
+        save to local storage
+        """
+        self.updated_at = datetime.utcnow()
 
     def __str__(self):
         """
