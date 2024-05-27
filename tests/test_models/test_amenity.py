@@ -2,7 +2,9 @@
 """
 Unittest for Amenity class
 """
-import models, unittest, os
+import models
+import unittest
+import os
 from time import sleep
 from datetime import datetime
 from models.amenity import Amenity
