@@ -10,7 +10,10 @@ from models.review import Review
 from models.amenity import Amenity
 from models.state import State
 from models.city import City
-import re, ast, cmd, shlex
+import re
+import ast
+import cmd
+import shlex
 
 
 def split_braces(e_arg):
