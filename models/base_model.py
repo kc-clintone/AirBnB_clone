@@ -7,7 +7,7 @@ import uuid
 
 class BaseModel:
     """This is going to be the base class that all others will inherit"""
-    def __init__(self, *args, **kwargs ):
+    def __init__(self, *args, **kwargs):
         """
         Args:
             - *args: positional args
