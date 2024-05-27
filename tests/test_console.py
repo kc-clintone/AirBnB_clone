@@ -2,7 +2,9 @@
 """
 Unit testing the console program
 """
-import os, unittest, sys
+import os
+import unittest
+import sys
 from unittest.mock import patch
 from io import StringIO
 from models import storage
