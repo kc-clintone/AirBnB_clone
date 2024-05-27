@@ -2,7 +2,8 @@
 """
 Serializing and deserializing module
 """
-import json, os
+import json
+import os
 from models.base_model import BaseModel
 from models.amenity import Amenity
 from models.review import Review
